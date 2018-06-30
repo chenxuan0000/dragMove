@@ -1,0 +1,13 @@
+{
+	presets: [
+		[
+			'env',
+			{
+                //  配置"modules": false是因为rollup会处理es6模块语法，其余的es6语法才由babel处理。
+				modules: false
+			}
+		]
+    ],
+    // external-helpers, 是为了避免在每个模块的头部重复引用相同的"helpers"方法，只需要在构建完的bundle头部引入一次就够了。
+	plugins: ['external-helpers']
+}
