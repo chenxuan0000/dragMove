@@ -1,9 +1,1 @@
-'use strict';
-
-var foo = 'hello world!';
-
-function main () {
-	console.log(foo);
-}
-
-module.exports = main;
+!function(t,e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):t.startDrag=e()}(this,function(){"use strict";function o(t,e){return t.currentStyle?parseFloat(t.currentStyle[e])||0:parseFloat(getComputedStyle(t)[e])||0}function u(t){for(var e=0;t;)e+=t.offsetLeft,(t=t.offsetParent)&&t!==document.body&&t!==document.documentElement&&(e+=o(t,"borderLeftWidth"));return e}function l(t){for(var e=0;t;)e+=t.offsetTop,(t=t.offsetParent)&&t!==document.body&&t!==document.documentElement&&(e+=o(t,"borderTopWidth"));return e}return function(){var t=0<arguments.length&&void 0!==arguments[0]?arguments[0]:{},n=t.target,e=t.wrapper,f=void 0===e?document.body:e,i=void 0;f&&(i={left:u(f),right:u(f)+f.offsetWidth-n.offsetWidth,top:l(f),bottom:l(f)+f.offsetHeight-n.offsetHeight}),n.onmousedown=function(t){var e=(t=t||window.event).clientX-this.offsetLeft,o=t.clientY-this.offsetTop;document.onmousemove=function(t){if(t=t||window.event,!f)return n.style.left=t.clientX-e+"px",void(n.style.top=t.clientY-o+"px");t.clientX-e<i.left?n.style.left=i.left+"px":t.clientX-e>i.right?n.style.left=i.right+"px":n.style.left=t.clientX-e+"px",t.clientY-o<i.top?n.style.top=i.top+"px":t.clientY-o>i.bottom?n.style.top=i.bottom+"px":n.style.top=t.clientY-o+"px"},document.onmouseup=function(t){t=t||window.event,document.onmousemove=null,document.onmouseup=null}}}});
